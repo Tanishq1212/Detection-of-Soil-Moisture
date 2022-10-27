@@ -1,0 +1,25 @@
+
+//TANISHQ CST 34
+//IOT project
+// Moisture relay sensor
+int relay=10;
+int sensor=5;
+int val;
+void setup()
+{
+  pinMode(10,OUTPUT);//10->output pin->to send signal to relay
+  pinMode(5,INPUT);//5->input pin->receive data from soil moisture sensor
+}
+void loop()
+{
+  val=digitalRead(5);
+  if(val==LOW)
+  {
+    digitalWrite(10,LOW);//if moisture sensor provides LOW value send low value to relay
+  }
+  else
+  {
+    digitalWrite(10,HIGH);//if moisture sensor provides HIGH value send HIGH value to relay
+  }
+  delay(400);
+}
